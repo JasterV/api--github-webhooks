@@ -17,6 +17,8 @@ export const webhook = (): Middleware => async (ctx) => {
     console.log("webhook", "no push event")
     return
   }
+
+  // TODO: Get command to execute from env variable and execute it
   console.log("webhook", "done", "success")
 };
 
