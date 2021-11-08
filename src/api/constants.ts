@@ -1,1 +1,1 @@
-export const BEARER = 'Bearer ';
+export const PUSH_EVENT = "push"
