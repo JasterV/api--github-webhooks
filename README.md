@@ -24,7 +24,7 @@ Example:
     if (hash !== signature) {
       // Return an unauthorized error
     }
-    await next();
+    next();
 ```
 
 ## Webhook handler
