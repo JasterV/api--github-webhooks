@@ -5,7 +5,7 @@ An API Rest built with Deno to catch github events
 ## Run
 
 ```sh
-deno run --allow-read --allow-env --allow-net src/app.ts
+deno run --allow-read --allow-env --allow-net app.ts
 ```
 
 ## Github webhook secret

@@ -1,3 +1,2 @@
-export type ActionsRecord = Record<"actions", Record<string, string>>
-
-export type GithubEvent = 'push' | 'pull_request' 
+export type ActionType = "push" | "pull_request" | "issue" | "comment";
+export type ActionsRecord = Record<"actions", Record<ActionType, string>>;

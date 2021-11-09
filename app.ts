@@ -1,5 +1,5 @@
-import app from "./api/server.ts";
-import config from "./config/mod.ts";
+import app from "./src/api/mod.ts";
+import config from "./src/config/mod.ts";
 
 try {
   config.validate();
