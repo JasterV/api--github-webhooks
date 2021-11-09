@@ -1,1 +1,1 @@
-export const PUSH_EVENT = "push"
+export const PUSH_EVENT = "push";

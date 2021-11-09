@@ -1,7 +1,15 @@
 import { config } from "https://deno.land/x/dotenv@v2.0.0/mod.ts";
 
-const env = config({ safe: true });
+const { PORT, SECRET } = config({ safe: true });
 
-env.PORT = env.PORT || "3000";
+const cnf = {
+  port: PORT || "3000",
+  secret: SECRET,
+};
 
-export default env;
+export default {
+  get: (key: "port" | "secret") => cnf[key],
+  validate: () => {
+    if (!SECRET) throw new Error("SECRET required but not found");
+  },
+};

@@ -1,6 +1,10 @@
-import app from './api/server.ts'
-import config from './config/mod.ts'
+import app from "./api/server.ts";
+import config from "./config/mod.ts";
 
-const port = parseInt(config.PORT)
-
-await app.listen({ port });
+try {
+  config.validate();
+  const port = parseInt(config.get("port"));
+  await app.listen({ port });
+} catch (error) {
+  console.error(error);
+}
