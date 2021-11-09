@@ -1,4 +1,4 @@
-import app from "./src/api/mod.ts";
+import app from "./src/server.ts";
 import config from "./src/config/mod.ts";
 
 try {
