@@ -1,9 +1,32 @@
 import { Application } from "https://deno.land/x/oak@v9.0.1/mod.ts";
-import router from "./api/routes.ts";
+import WebhookRouter from "./api/routes.ts";
+import errorHandler from "./errorHandler.ts";
+import ActionsModel from "./actions/mod.ts";
+import config from "./config/mod.ts";
 
-const app = new Application();
+const ACTIONS_FILE_PATH = "./actions.yaml";
+const GITHUB_SECRET = config.get("secret");
 
-app.use(router.routes());
-app.use(router.allowedMethods());
+export default async () => {
+  const actionsModel = await ActionsModel(ACTIONS_FILE_PATH);
+  const router = WebhookRouter({ secret: GITHUB_SECRET, actionsModel });
+  const app = new Application();
 
-export default app;
+  // Error handling
+  app.use(async (ctx, next) => {
+    try {
+      await next();
+    } catch (err) {
+      errorHandler.handle(err, ctx);
+    }
+  });
+
+  // Handle Uncaught errors
+  app.addEventListener("error", (evt) => errorHandler.handle(evt.error));
+
+  // Add routes
+  app.use(router.routes());
+  app.use(router.allowedMethods());
+
+  return app;
+};
