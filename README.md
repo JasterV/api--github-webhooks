@@ -30,3 +30,7 @@ if (hash !== signature) {
 }
 next();
 ```
+
+## Get the github event
+
+We can get the github event from the 'x-github-event' header
