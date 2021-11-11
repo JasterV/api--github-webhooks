@@ -1,7 +1,7 @@
 import { Application } from "https://deno.land/x/oak@v9.0.1/mod.ts";
 import WebhookRouter from "./api/routes.ts";
 import errorHandler from "./errorHandler.ts";
-import { ActionsModelImpl } from "./actions/mod.ts";
+import { ActionsModelImpl } from "./lib/actions/mod.ts";
 import config from "./config/mod.ts";
 
 const ACTIONS_FILE_PATH = "./actions.yaml";
