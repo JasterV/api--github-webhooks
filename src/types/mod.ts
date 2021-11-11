@@ -8,6 +8,7 @@ export type GithubEvent =
   | "PushEvent"
   | "IssueEvent"
   | "PullRequestEvent";
+
 export interface ActionsModel {
   getActionFromGithubEvent: (event: GithubEvent) => string | string[];
   getAction: (ty: ActionType) => string | string[];
