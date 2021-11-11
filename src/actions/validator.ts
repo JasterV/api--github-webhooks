@@ -10,7 +10,7 @@ const check = v.compile({
       props: {
         on: {
           type: "string",
-          enum: ["push", "pull_request", "issue"],
+          enum: ["push", "pull_request", "issues"],
         },
         command: [
           "string",

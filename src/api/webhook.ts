@@ -9,7 +9,9 @@ export default (actionsModel: ActionsModel): Middleware =>
       return;
     }
     const payload = await ctx.request.body().value;
-    console.log("Got payload", { payload });
+    const headers = ctx.request.headers
+    const event = ctx.request.headers.get('x-github-event')
+    console.log("Got request", { payload, headers });
     // TODO: Get github event and map it to action type
     // TODO: Get commands to execute from actions and execute it
     ctx.response.body = { message: "SUCCESS" };
