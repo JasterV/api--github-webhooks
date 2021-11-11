@@ -1,14 +1,14 @@
 import { Application } from "https://deno.land/x/oak@v9.0.1/mod.ts";
 import WebhookRouter from "./api/routes.ts";
 import errorHandler from "./errorHandler.ts";
-import ActionsModel from "./actions/mod.ts";
+import { ActionsModelImpl } from "./actions/mod.ts";
 import config from "./config/mod.ts";
 
 const ACTIONS_FILE_PATH = "./actions.yaml";
 const GITHUB_SECRET = config.get("secret");
 
 export default async () => {
-  const actionsModel = await ActionsModel(ACTIONS_FILE_PATH);
+  const actionsModel = await ActionsModelImpl(ACTIONS_FILE_PATH);
   const router = WebhookRouter({ secret: GITHUB_SECRET, actionsModel });
   const app = new Application();
 
