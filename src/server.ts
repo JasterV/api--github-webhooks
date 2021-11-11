@@ -4,7 +4,7 @@ import errorHandler from "./errorHandler.ts";
 import { ActionsModelImpl } from "./lib/actions/mod.ts";
 import config from "./config/mod.ts";
 
-const ACTIONS_FILE_PATH = "./actions.yaml";
+const ACTIONS_FILE_PATH = "./actions.example.yaml";
 const GITHUB_SECRET = config.get("secret");
 
 export default async () => {

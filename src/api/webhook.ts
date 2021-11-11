@@ -11,7 +11,7 @@ export default (actionsModel: ActionsModel): Middleware =>
     }
     const body = await request.body()
     const headers = request.headers
-    
+
     console.log("Got request", { payload: body.value, headers });
     try {
       // Get commands from github event
@@ -20,6 +20,7 @@ export default (actionsModel: ActionsModel): Middleware =>
       // Execute commands. If some command fails we log the error and reply back to github
       if (commands && Array.isArray(commands)) await executeN(commands);
       else if (commands) await execute(commands);
+      else console.error(`Event not found: ${event}`)
       // prepare already a success message
       response.body = { message: "SUCCESS" };
     } catch (error) {
