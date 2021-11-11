@@ -7,6 +7,6 @@ export default (
   { secret, actionsModel }: { secret: string; actionsModel: ActionsModel },
 ) => {
   const router = new Router();
-  router.post(`/webhook/${secret}`, auth(secret), webhook(actionsModel));
+  router.post(`/webhooks/${secret}`, auth(secret), webhook(actionsModel));
   return router;
 };
