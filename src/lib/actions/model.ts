@@ -13,6 +13,6 @@ export default async (path: string): Promise<ActionsModel> => {
 
   return {
     getCommands: (ty: ActionType) =>
-      record.actions.find((a) => a.on == ty)!.command,
+      record.actions.find((a) => a.on == ty)?.command,
   };
 };

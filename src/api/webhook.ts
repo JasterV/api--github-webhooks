@@ -9,10 +9,10 @@ export default (actionsModel: ActionsModel): Middleware =>
       response.body = { message: "Bad request" };
       return;
     }
-    const body = await request.body()
+    const body = await request.body().value
     const headers = request.headers
 
-    console.log("Got request", { payload: body.value, headers });
+    console.log("Got request", { payload: body, headers });
     try {
       // Get commands from github event
       const event = request.headers.get("x-github-event") || "";
