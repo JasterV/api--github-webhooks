@@ -33,4 +33,25 @@ next();
 
 ## Get the github event
 
-We can get the github event from the 'x-github-event' header
+We can get the github event from the `x-github-event` header.
+Then, to get more data about this event we can look at the payload received in the body of the request.
+
+## Actions file
+
+The actions file defines which commands to execute when a certain event is received.
+
+Example:
+
+```yaml
+actions:
+  - on: push
+    command: "echo 'Hello World'"
+  - on: pull_request
+    command: 
+      - "mkdir ./patata"
+      - "rmdir ./patata"
+      - "touch patata/mypatata.txt"
+      - "tree patata"
+```
+
+Right now it only supports push, pull requests and issues, and does not support specifying a branch. But it will be implemented on demand (For sure I want to be able to trigger the push event only when it happens on a certain branch).

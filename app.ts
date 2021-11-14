@@ -1,6 +1,6 @@
-import App from "./src/server.ts";
-import config from "./src/config/mod.ts";
 import errorHandler from "./src/errorHandler.ts";
+import config from "./src/config/mod.ts";
+import App from "./src/server.ts";
 
 try {
   config.validate();

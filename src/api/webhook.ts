@@ -1,6 +1,6 @@
-import { Middleware } from "https://deno.land/x/oak@v9.0.1/mod.ts";
 import { ActionsModel, ActionType } from "../types/mod.ts";
 import { execute, executeN } from "../lib/commands.ts";
+import { Middleware } from "../deps/oak.ts";
 
 const GITHUB_EVENT = "x-github-event"
 

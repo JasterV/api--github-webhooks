@@ -1,6 +1,4 @@
-import {
-  parse as yamlParse,
-} from "https://deno.land/std@0.82.0/encoding/yaml.ts";
+import { yamlParse } from "../../deps/yaml.ts";
 import { ActionsModel, ActionsRecord, ActionType } from "../../types/mod.ts";
 import validator from "./validator.ts";
 

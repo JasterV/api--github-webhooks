@@ -1,4 +1,4 @@
-import FastestValidator from "https://esm.sh/fastest-validator@1";
+import {FastestValidator} from "../../deps/fastestValidator.ts";
 
 const v = new FastestValidator();
 

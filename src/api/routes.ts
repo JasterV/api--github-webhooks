@@ -1,4 +1,4 @@
-import { Router } from "https://deno.land/x/oak@v9.0.1/mod.ts";
+import { Router } from "../deps/oak.ts";
 import { ActionsModel } from "../types/mod.ts";
 import webhook from "./webhook.ts";
 import auth from "./auth.ts";
