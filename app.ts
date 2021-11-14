@@ -8,6 +8,11 @@ try {
 
   const app = await App();
 
+  app.use(async (ctx, next) => {
+    console.log("Request received", {Request: ctx.request})
+    await next()
+  })
+
   app.addEventListener("listen", ({ hostname, port, secure }) => {
     console.log(
       `Listening on: ${secure ? "https://" : "http://"}${
