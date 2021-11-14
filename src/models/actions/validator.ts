@@ -1,4 +1,4 @@
-import {FastestValidator} from "../../deps/fastestValidator.ts";
+import { FastestValidator } from "../../../deps.ts";
 
 const v = new FastestValidator();
 

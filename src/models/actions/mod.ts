@@ -1,5 +1,5 @@
-import { yamlParse } from "../../deps/yaml.ts";
 import { ActionsModel, ActionsRecord, ActionType } from "../../types/mod.ts";
+import { yamlParse } from "../../../deps.ts";
 import validator from "./validator.ts";
 
 export default async (path: string): Promise<ActionsModel> => {

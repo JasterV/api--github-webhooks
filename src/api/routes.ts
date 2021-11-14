@@ -1,5 +1,5 @@
-import { Router } from "../deps/oak.ts";
 import { ActionsModel } from "../types/mod.ts";
+import { Router } from "../../deps.ts";
 import webhook from "./webhook.ts";
 import auth from "./auth.ts";
 

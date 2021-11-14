@@ -1,7 +1,6 @@
-import { Middleware } from '../deps/oak.ts';
-import { hmac } from "../deps/crypto.ts";
+import { hmac, Middleware } from "../../deps.ts";
 
-const SIGNATURE_HEADER = "X-Hub-Signature-256"
+const SIGNATURE_HEADER = "X-Hub-Signature-256";
 
 export default (secret: string): Middleware =>
   async (ctx, next) => {

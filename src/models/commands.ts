@@ -11,7 +11,7 @@ export async function execute(cmd: string) {
   const errorStr = new TextDecoder().decode(error);
   process.close();
   if (errorStr.trim().length > 0) throw new Error(errorStr);
-  console.log(`Output: ${outStr}`)
+  console.log(`Output: ${outStr}`);
   return outStr;
 }
 

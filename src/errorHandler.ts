@@ -1,5 +1,4 @@
-import { Context } from "https://deno.land/x/oak@v9.0.1/mod.ts";
-import { isHttpError } from "https://deno.land/x/oak@v9.0.1/mod.ts";
+import { Context, isHttpError } from "../deps.ts";
 
 export default {
   handle(err: Error, ctx?: Context) {

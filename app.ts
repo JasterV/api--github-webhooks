@@ -1,10 +1,10 @@
 import errorHandler from "./src/errorHandler.ts";
-import config from "./src/config/mod.ts";
+import config from "./config/mod.ts";
 import App from "./src/server.ts";
 
 try {
   config.validate();
-  const port = parseInt(config.get("port"));
+  const port = parseInt(config.get("port") as string);
 
   const app = await App();
 
