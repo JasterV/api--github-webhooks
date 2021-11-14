@@ -1,6 +1,6 @@
 FROM denoland/deno:1.16.1
 
-ENV PORT=8000
+ENV PORT=5004
 
 # The port that your application listens to.
 EXPOSE ${PORT}
